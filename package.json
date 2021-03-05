@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass custom.scss custom.css --no-source-map --style=compressed"
+    "sass": "sass bootstrap-custom.scss bootstrap-custom.css --no-source-map --style=compressed"
   },
   "author": "",
   "license": "ISC",
