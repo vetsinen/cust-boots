@@ -11,169 +11,86 @@
     <link href="bootstrap-custom.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
 
-<div class="container">
+<div id="app" class="container">
 
     <h1 class="text-center">Social Dancers' Portal</h1>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link active" href="#">вечеринки</a>
+            <a class="nav-link active" href="index.html">вечеринки</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">школы танцев</a>
+            <a class="nav-link" href="studios.html">школы танцев</a>
         </li>
     </ul>
 
     <div class="row">
         <div class="col-10">
 
-            <article class="row">
+            <article v-for="event in events" class="row">
                 <div class="col-sm-12 col-md-3 ">
-                    <img src="http://salsalife.com.ua/images/stories/salsa/solomon2-03.jpg">
+                    <div v-if="event.imgPromo">
+                        <img :src="'https://event-editor-zjwkw.ondigitalocean.app'+event.imgPromo.formats.small.url">
+                    </div>
+
                 </div>
                 <div class="col-sm-12 col-md">
                     <details>
                         <summary>
-                            <h6>Welcome Spring Bachata Party
-                            </h6>
-                            <h5>📅<span>08.03, 19:00</span> 💵<span>от 50 до 80 грн, </span>
-                                <span>🚂 ул. Л.Толстого 11/61, </span>
-                                <span> 🎹: 3 бачаты, 1 сальса, </span>
-                                <span>🎧 dj Costa Rica, dj Igor</span><br>
+                            <h6>{{event.shortName}}</h6>
+                            <h5>📅<span>{{event.date}}, {{ event.time.substr(0,5) }}</span>
+                                💵<span>{{ event.fee }}, </span>
+                                <span>🚂 {{ event.address }}, </span>
+                                <span> 🎹{{ event.balance}}, </span>
+                                <span>🎧 {{event.dj}}</span><br>
                             </h5>
                             <h6>посмотреть полный анонс</h6>
                         </summary>
-                        <p>2 марта, вторник, 20.00 - 23.30
-
-                            Первая весенняя вечеринка!
-
-                            В этот вечер для Вас музыка от Dj Costa Rica & Dj Igor
-
-                            В начале вечеринки мастер-класс по бачате от Costa Rica
-
-                            Музыка: 3 бачаты / 1 сальса.
-
-                            Вход: 50 грн. при условии репоста, 80 грн. без репоста.
-
-                            Адрес: ул. Льва Толстого 11/61, кафе Solomon, 2 этаж (м. Льва Толстого).
-
-                            www.facebook.com</p>
+                        <p>{{event.description}}</p>
                     </details>
                 </div>
             </article>
             <hr>
-
-            <article class="row">
-                <div class="col-sm-12 col-md-3 ">
-                    <img src="https://salsalife.com.ua/images/stories/salsa/kdf2021.jpg">
-                </div>
-                <div class="col-sm-12 col-md">
-                    <details>
-                        <summary>
-                            <h6>Kiev Dance Festival 2021
-                            </h6>
-                            <h5>📅<span>07.03, 19:00</span> 💵<span>600 грн, </span>
-                                <span>где🚂 ул. Л.Толстого 11/61, </span>
-                                <span> баланс🎹: 3 меренге, 1 сальса, </span>
-                                <span>за пультом🎧 dj Пуо</span>
-                            </h5>
-                            <h6>посмотреть полный анонс</h6>
-                        </summary>
-                        <p>2 марта, вторник, 20.00 - 23.30
-
-                            Первая весенняя вечеринка!
-
-                            В этот вечер для Вас музыка от Dj Costa Rica & Dj Igor
-
-                            В начале вечеринки мастер-класс по бачате от Costa Rica
-
-                            Музыка: 3 бачаты / 1 сальса.
-
-                            Вход: 50 грн. при условии репоста, 80 грн. без репоста.
-
-                            Адрес: ул. Льва Толстого 11/61, кафе Solomon, 2 этаж (м. Льва Толстого).
-
-                            www.facebook.com</p>
-                    </details>
-                </div>
-            </article>
-            <hr>
-
-            <article class="row">
-                <div class="col-sm-12 col-md-3 ">
-                    <img src="http://salsalife.com.ua/images/stories/salsa/solomon2-03.jpg">
-                </div>
-                <div class="col-sm-12 col-md">
-                    <details>
-                        <summary>
-                            <h6>Welcome Spring Bachata Party
-                            </h6>
-                            <h5>📅<span>08.03, 19:00</span> 💵<span>от 50 до 80 грн, </span>
-                                <span>🚂 ул. Л.Толстого 11/61, </span>
-                                <span> 🎹: 3 бачаты, 1 сальса, </span>
-                                <span>🎧 dj Costa Rica, dj Igor</span><br>
-
-                            </h5>
-                            <h6>посмотреть полный анонс</h6>
-                        </summary>
-                        <p>2 марта, вторник, 20.00 - 23.30
-
-                            Первая весенняя вечеринка!
-
-                            В этот вечер для Вас музыка от Dj Costa Rica & Dj Igor
-
-                            В начале вечеринки мастер-класс по бачате от Costa Rica
-
-                            Музыка: 3 бачаты / 1 сальса.
-
-                            Вход: 50 грн. при условии репоста, 80 грн. без репоста.
-
-                            Адрес: ул. Льва Толстого 11/61, кафе Solomon, 2 этаж (м. Льва Толстого).
-
-                            www.facebook.com</p>
-                    </details>
-                </div>
-            </article>
-            <hr>
-
-
-
-
 
         </div>
 
-        <div class="col-2">
-            <ul class="nav flex-column sticky-top">
-                <li class="nav-item flex-column">
-                    <a class="nav-link active" href="#">пн</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">вт</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">ср</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">чт</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">пт</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">сб</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">вс</a>
-                </li>
-            </ul>
-        </div>
 
     </div>
 </div>
+    <script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello 42!',
+            events: [{"id":1,"shortName":"merengue party","date":"2021-03-03","time":"19:00:00.000","address":"вулиця Алматинська, 74, Київ","description":"Go ahead and enter app3.seen = false in the console. You should see the message disappear.\n\nThis example demonstrates that we can bind data to not only text and attributes, but also the structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.\n\nThere are quite a few other directives, each with its own special functionality. For example, the v-for directive can be used for displaying a list of items using the data from an Array:","dj":"dj Stribanek","balance":"3 меренге, 1 сон","weekDay":"воскресенье","fee":"500 грн","published_at":"2021-03-06T12:11:59.382Z","created_at":"2021-03-06T12:11:55.057Z","updated_at":"2021-03-06T12:11:59.419Z","imgPromo":null}]
+        },
+        methods: {
+
+        },
+        async beforeMount() {
+            let response = await fetch('https://event-editor-zjwkw.ondigitalocean.app/parties');
+
+            if (response.ok) { // если HTTP-статус в диапазоне 200-299
+                               // получаем тело ответа (см. про этот метод ниже)
+                let events = await response.json();
+                for (i=0; i<events.length; i++){
+                    if (!events[i].imgPromo) console.log('not exist')
+                }
+
+                console.log(events)
+                this.events = events
+            } else {
+                alert("Ошибка HTTP: " + response.status);
+            }
+        }
+    })
+</script>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/popper.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>

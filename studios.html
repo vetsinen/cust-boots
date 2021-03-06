@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Su Casa</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-custom.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app" class="container">
+
+    <h1 class="text-center">Social Dancers' Portal</h1>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="index.html">вечеринки</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="studios.html">школы танцев</a>
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="col-10">
+
+            <article v-for="studio in studios" class="row">
+                <div class="col-sm-12 col-md-3 ">
+                    <div v-if="studio.logo">
+                        <img :src="'https://event-editor-zjwkw.ondigitalocean.app'+studio.logo.formats.thumbnail.url">
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md">
+                    <h3>{{studio.shortName}}</h3>
+                    <p>{{studio.description}}</p>
+                </div>
+            </article>
+            <hr>
+
+        </div>
+
+
+    </div>
+</div>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            studios:  [{
+                "id": 1,
+                "shortName": "Kiev Latino",
+                "link": "n/a",
+                "description": "танцевальная студия\n\nНазвания: Киев Латино\n\nУслуги: латиноамериканские танцы\n\nГород: Киев, Украина\n\nРайон: Голосеевский\n\nМетро: Дворец «Украина»\n\nАдрес: ул. Предславинськая, 12\n\nТелефон: (067) 597-03-78",
+                "created_at": "2021-03-06T13:10:24.865Z",
+                "updated_at": "2021-03-06T13:10:24.886Z",
+                "logo": {
+                    "id": 7,
+                    "name": "kiev latino.jpg",
+                    "alternativeText": "",
+                    "caption": "",
+                    "width": 300,
+                    "height": 225,
+                    "formats": {
+                        "thumbnail": {
+                            "name": "thumbnail_kiev latino.jpg",
+                            "hash": "thumbnail_kiev_latino_bdc21fb48c",
+                            "ext": ".jpg",
+                            "mime": "image/jpeg",
+                            "width": 208,
+                            "height": 156,
+                            "size": 7.69,
+                            "path": null,
+                            "url": "/uploads/thumbnail_kiev_latino_bdc21fb48c.jpg"
+                        }
+                    },
+                    "hash": "kiev_latino_bdc21fb48c",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "size": 13.74,
+                    "url": "/uploads/kiev_latino_bdc21fb48c.jpg",
+                    "previewUrl": null,
+                    "provider": "local",
+                    "provider_metadata": null,
+                    "created_at": "2021-03-06T13:10:18.999Z",
+                    "updated_at": "2021-03-06T13:10:19.022Z"
+                }
+            }]
+
+        },
+        methods: {
+
+        },
+        async beforeMount() {
+            let response = await fetch('https://event-editor-zjwkw.ondigitalocean.app/studios');
+
+            if (response.ok) { // если HTTP-статус в диапазоне 200-299
+                // получаем тело ответа (см. про этот метод ниже)
+                let studios = await response.json();
+
+                this.studios = studios
+            } else {
+                alert("Ошибка HTTP: " + response.status);
+            }
+        }
+    })
+</script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
