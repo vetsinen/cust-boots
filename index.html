@@ -30,9 +30,9 @@
     </ul>
 
     <div class="row">
-        <div class="col-10">
+        <div  v-for="event in events" class="col-10">
 
-            <article v-for="event in events" class="row">
+            <article class="row">
                 <div class="col-sm-12 col-md-3 ">
                     <div v-if="event.imgPromo">
                         <img :src="'https://event-editor-zjwkw.ondigitalocean.app'+event.imgPromo.formats.small.url">
@@ -54,8 +54,10 @@
                         <p>{{event.description}}</p>
                     </details>
                 </div>
+
             </article>
             <hr>
+
 
         </div>
 

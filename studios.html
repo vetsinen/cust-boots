@@ -30,9 +30,9 @@
     </ul>
 
     <div class="row">
-        <div class="col-10">
+        <div v-for="studio in studios" class="col-10">
 
-            <article v-for="studio in studios" class="row">
+            <article class="row">
                 <div class="col-sm-12 col-md-3 ">
                     <div v-if="studio.logo">
                         <img :src="'https://event-editor-zjwkw.ondigitalocean.app'+studio.logo.formats.thumbnail.url">
@@ -40,9 +40,10 @@
 
                 </div>
                 <div class="col-sm-12 col-md">
-                    <h3>{{studio.shortName}}</h3>
-                    <p>{{studio.description}}</p>
+                    <h3>{{ studio.shortName }}</h3>
+                    <p>{{ studio.description }}</p>
                 </div>
+
             </article>
             <hr>
 
@@ -55,7 +56,7 @@
     let app = new Vue({
         el: '#app',
         data: {
-            studios:  [{
+            studios: [{
                 "id": 1,
                 "shortName": "Kiev Latino",
                 "link": "n/a",
@@ -96,9 +97,7 @@
             }]
 
         },
-        methods: {
-
-        },
+        methods: {},
         async beforeMount() {
             let response = await fetch('https://event-editor-zjwkw.ondigitalocean.app/studios');
 
