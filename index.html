@@ -30,35 +30,66 @@
     </ul>
 
     <div class="row">
-        <div v-for="event in events" class="col-10">
+        <div  class="col-10">
 
-            <article class="row">
-                <div class="col-sm-12 col-md-3 ">
-                    <div v-if="event.imgPromo">
-                        <img :src="source+event.imgPromo.formats.thumbnail.url">
+            <div v-for="event in events" class="separated-article">
+                <a :name="event.day" href=""></a>
+                <article class="row">
+                    <div class="col-sm-12 col-md-3 ">
+                        <div v-if="event.imgPromo">
+                            <img :src="source+event.imgPromo.formats.thumbnail.url">
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 col-md">
+                        <details>
+                            <summary>
+                                <h6>{{ event.shortName }}-{{event.day}}</h6>
+                                <h5>📅<span>{{ event.date }}, {{ event.time.substr(0, 5) }}</span>
+                                    💵<span>{{ event.fee }}, </span>
+                                    <span>🚂 {{ event.address }}, </span>
+                                    <span> 🎹{{ event.balance }}, </span>
+                                    <span>🎧 {{ event.dj }}</span><br>
+                                </h5>
+                                <h6>посмотреть полный анонс</h6>
+                            </summary>
+                            <p>{{ event.description }}</p>
+                        </details>
                     </div>
 
-                </div>
-                <div class="col-sm-12 col-md">
-                    <details>
-                        <summary>
-                            <h6>{{ event.shortName }}-{{event.day}}</h6>
-                            <h5>📅<span>{{ event.date }}, {{ event.time.substr(0, 5) }}</span>
-                                💵<span>{{ event.fee }}, </span>
-                                <span>🚂 {{ event.address }}, </span>
-                                <span> 🎹{{ event.balance }}, </span>
-                                <span>🎧 {{ event.dj }}</span><br>
-                            </h5>
-                            <h6>посмотреть полный анонс</h6>
-                        </summary>
-                        <p>{{ event.description }}</p>
-                    </details>
-                </div>
+                </article>
+                <hr>
+            </div>
 
-            </article>
-            <hr>
+        </div>
 
-
+        <div class="col-2">
+            <ul class="nav flex-column sticky-top">
+                <li class="nav-item flex-column">
+                    <a class="nav-link active" href="#"> </a>
+                </li>
+                <li class="nav-item flex-column">
+                    <a class="nav-link active" href="#понедельник">пн</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#вторник">вт</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#среда">ср</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#четверг">чт</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#пятница">пт</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#суббота">сб</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#воскресенье">вс</a>
+                </li>
+            </ul>
         </div>
 
 
