@@ -1,95 +1,18 @@
-e = [{
+ev = [{
     "id": 1,
     "shortName": "merengue party",
-    "date": "2021-03-03",
+    "date": "2021-03-07",
     "time": "19:00:00.000",
     "address": "вулиця Алматинська, 74, Київ",
-    "description": "Go ahead and enter app3.seen = false in the console. You should see the message disappear.\n\nThis example demonstrates that we can bind data to not only text and attributes, but also the structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.\n\nThere are quite a few other directives, each with its own special functionality. For example, the v-for directive can be used for displaying a list of items using the data from an Array:",
+    "description": "A cloud server is like a regular server, only it is a virtual machine located in a cloud infrastructure. A cloud server offers advantages such as infinite scalability, as well as unbeatable availability, performance and price.\n\nThe cloud server model is a leading server solution for a broad a diversity of computing resources. From startup development to enterprise IT, cloud server models provide computing power that is immediate, requires no upfront investment, and carries no long-term commitment. A cloud server’s other main benefits are:\n\nServer set-up in less than 1 minute\nInstant scaling up or down as required\n99.95% uptime guaranteed\nNo hardware maintenance\nLow total cost of ownership (TCO)\nSimple backup and monitoring",
     "dj": "dj Stribanek",
     "balance": "3 меренге, 1 сон",
-    "weekDay": "воскресенье",
     "fee": "500 грн",
-    "published_at": "2021-03-06T12:11:59.382Z",
-    "created_at": "2021-03-06T12:11:55.057Z",
-    "updated_at": "2021-03-06T12:24:31.978Z",
-    "imgPromo": {
-        "id": 3,
-        "name": "155071212_439874440790684_765817640547660506_o.jpg",
-        "alternativeText": "",
-        "caption": "",
-        "width": 1280,
-        "height": 669,
-        "formats": {
-            "thumbnail": {
-                "name": "thumbnail_155071212_439874440790684_765817640547660506_o.jpg",
-                "hash": "thumbnail_155071212_439874440790684_765817640547660506_o_b4955d7e17",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "width": 245,
-                "height": 128,
-                "size": 8.67,
-                "path": null,
-                "url": "/uploads/thumbnail_155071212_439874440790684_765817640547660506_o_b4955d7e17.jpg"
-            },
-            "large": {
-                "name": "large_155071212_439874440790684_765817640547660506_o.jpg",
-                "hash": "large_155071212_439874440790684_765817640547660506_o_b4955d7e17",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "width": 1000,
-                "height": 523,
-                "size": 85.84,
-                "path": null,
-                "url": "/uploads/large_155071212_439874440790684_765817640547660506_o_b4955d7e17.jpg"
-            },
-            "medium": {
-                "name": "medium_155071212_439874440790684_765817640547660506_o.jpg",
-                "hash": "medium_155071212_439874440790684_765817640547660506_o_b4955d7e17",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "width": 750,
-                "height": 392,
-                "size": 56.25,
-                "path": null,
-                "url": "/uploads/medium_155071212_439874440790684_765817640547660506_o_b4955d7e17.jpg"
-            },
-            "small": {
-                "name": "small_155071212_439874440790684_765817640547660506_o.jpg",
-                "hash": "small_155071212_439874440790684_765817640547660506_o_b4955d7e17",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "width": 500,
-                "height": 261,
-                "size": 29.07,
-                "path": null,
-                "url": "/uploads/small_155071212_439874440790684_765817640547660506_o_b4955d7e17.jpg"
-            }
-        },
-        "hash": "155071212_439874440790684_765817640547660506_o_b4955d7e17",
-        "ext": ".jpg",
-        "mime": "image/jpeg",
-        "size": 109.58,
-        "url": "/uploads/155071212_439874440790684_765817640547660506_o_b4955d7e17.jpg",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_at": "2021-03-06T12:23:49.607Z",
-        "updated_at": "2021-03-06T12:23:49.682Z"
-    }
-}, {
-    "id": 2,
-    "shortName": "fiesta cubana",
-    "date": "2021-03-11",
-    "time": "19:00:00.000",
-    "address": "вулиця Алматинська, 74, Київ",
-    "description": "По воскресеньям, с 20.00\n\nЛатиноамериканские вечеринки в Buena Vista!\n\nТанцуем сальсу, бачату и другие латиноамериканские танцы...\n\nЖивая музыка с 21.30\n\nВход: свободный!\n\nАдрес: ул. Большая Житомирская, 8/14.\n\nwww.facebook.com/FreeDanceSpace",
-    "dj": "dj Stribanek",
-    "balance": "3 меренге, 1 сон",
-    "weekDay": "воскресенье",
-    "fee": "500 грн",
-    "published_at": "2021-03-06T12:22:09.876Z",
-    "created_at": "2021-03-06T12:18:16.822Z",
-    "updated_at": "2021-03-06T12:24:10.322Z",
+    "city": "kyiv",
+    "rank": "c",
+    "published_at": "2021-03-07T13:20:38.000Z",
+    "created_at": "2021-03-07T13:20:29.000Z",
+    "updated_at": "2021-03-07T15:06:17.000Z",
     "imgPromo": {
         "id": 2,
         "name": "144620639_2616503585321800_3731135647128148229_o.jpg",
@@ -100,58 +23,58 @@ e = [{
         "formats": {
             "thumbnail": {
                 "name": "thumbnail_144620639_2616503585321800_3731135647128148229_o.jpg",
-                "hash": "thumbnail_144620639_2616503585321800_3731135647128148229_o_e4d1830c18",
+                "hash": "thumbnail_144620639_2616503585321800_3731135647128148229_o_b8f4d12840",
                 "ext": ".jpg",
                 "mime": "image/jpeg",
                 "width": 208,
                 "height": 156,
                 "size": 9.92,
                 "path": null,
-                "url": "/uploads/thumbnail_144620639_2616503585321800_3731135647128148229_o_e4d1830c18.jpg"
+                "url": "/uploads/thumbnail_144620639_2616503585321800_3731135647128148229_o_b8f4d12840.jpg"
             },
             "large": {
                 "name": "large_144620639_2616503585321800_3731135647128148229_o.jpg",
-                "hash": "large_144620639_2616503585321800_3731135647128148229_o_e4d1830c18",
+                "hash": "large_144620639_2616503585321800_3731135647128148229_o_b8f4d12840",
                 "ext": ".jpg",
                 "mime": "image/jpeg",
                 "width": 1000,
                 "height": 750,
                 "size": 106.89,
                 "path": null,
-                "url": "/uploads/large_144620639_2616503585321800_3731135647128148229_o_e4d1830c18.jpg"
+                "url": "/uploads/large_144620639_2616503585321800_3731135647128148229_o_b8f4d12840.jpg"
             },
             "medium": {
                 "name": "medium_144620639_2616503585321800_3731135647128148229_o.jpg",
-                "hash": "medium_144620639_2616503585321800_3731135647128148229_o_e4d1830c18",
+                "hash": "medium_144620639_2616503585321800_3731135647128148229_o_b8f4d12840",
                 "ext": ".jpg",
                 "mime": "image/jpeg",
                 "width": 750,
                 "height": 563,
                 "size": 69.49,
                 "path": null,
-                "url": "/uploads/medium_144620639_2616503585321800_3731135647128148229_o_e4d1830c18.jpg"
+                "url": "/uploads/medium_144620639_2616503585321800_3731135647128148229_o_b8f4d12840.jpg"
             },
             "small": {
                 "name": "small_144620639_2616503585321800_3731135647128148229_o.jpg",
-                "hash": "small_144620639_2616503585321800_3731135647128148229_o_e4d1830c18",
+                "hash": "small_144620639_2616503585321800_3731135647128148229_o_b8f4d12840",
                 "ext": ".jpg",
                 "mime": "image/jpeg",
                 "width": 500,
                 "height": 375,
                 "size": 38.56,
                 "path": null,
-                "url": "/uploads/small_144620639_2616503585321800_3731135647128148229_o_e4d1830c18.jpg"
+                "url": "/uploads/small_144620639_2616503585321800_3731135647128148229_o_b8f4d12840.jpg"
             }
         },
-        "hash": "144620639_2616503585321800_3731135647128148229_o_e4d1830c18",
+        "hash": "144620639_2616503585321800_3731135647128148229_o_b8f4d12840",
         "ext": ".jpg",
         "mime": "image/jpeg",
         "size": 139.68,
-        "url": "/uploads/144620639_2616503585321800_3731135647128148229_o_e4d1830c18.jpg",
+        "url": "/uploads/144620639_2616503585321800_3731135647128148229_o_b8f4d12840.jpg",
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_at": "2021-03-06T12:23:38.891Z",
-        "updated_at": "2021-03-06T12:23:38.927Z"
+        "created_at": "2021-03-07T15:06:05.000Z",
+        "updated_at": "2021-03-07T15:06:06.000Z"
     }
 }]

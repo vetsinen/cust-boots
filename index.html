@@ -25,33 +25,33 @@
             <a class="nav-link active" href="index.html">вечеринки</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="studios.html">школы танцев</a>
+            <a class="nav-link" href="#">школы танцев</a>
         </li>
     </ul>
 
     <div class="row">
-        <div  v-for="event in events" class="col-10">
+        <div v-for="event in events" class="col-10">
 
             <article class="row">
                 <div class="col-sm-12 col-md-3 ">
                     <div v-if="event.imgPromo">
-                        <img :src="'https://event-editor-zjwkw.ondigitalocean.app'+event.imgPromo.formats.small.url">
+                        <img :src="source+event.imgPromo.formats.thumbnail.url">
                     </div>
 
                 </div>
                 <div class="col-sm-12 col-md">
                     <details>
                         <summary>
-                            <h6>{{event.shortName}}</h6>
-                            <h5>📅<span>{{event.date}}, {{ event.time.substr(0,5) }}</span>
+                            <h6>{{ event.shortName }}-{{event.day}}</h6>
+                            <h5>📅<span>{{ event.date }}, {{ event.time.substr(0, 5) }}</span>
                                 💵<span>{{ event.fee }}, </span>
                                 <span>🚂 {{ event.address }}, </span>
-                                <span> 🎹{{ event.balance}}, </span>
-                                <span>🎧 {{event.dj}}</span><br>
+                                <span> 🎹{{ event.balance }}, </span>
+                                <span>🎧 {{ event.dj }}</span><br>
                             </h5>
                             <h6>посмотреть полный анонс</h6>
                         </summary>
-                        <p>{{event.description}}</p>
+                        <p>{{ event.description }}</p>
                     </details>
                 </div>
 
@@ -64,28 +64,57 @@
 
     </div>
 </div>
-    <script>
+<script>
     let app = new Vue({
         el: '#app',
         data: {
             message: 'Hello 42!',
-            events: [{"id":1,"shortName":"merengue party","date":"2021-03-03","time":"19:00:00.000","address":"вулиця Алматинська, 74, Київ","description":"Go ahead and enter app3.seen = false in the console. You should see the message disappear.\n\nThis example demonstrates that we can bind data to not only text and attributes, but also the structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.\n\nThere are quite a few other directives, each with its own special functionality. For example, the v-for directive can be used for displaying a list of items using the data from an Array:","dj":"dj Stribanek","balance":"3 меренге, 1 сон","weekDay":"воскресенье","fee":"500 грн","published_at":"2021-03-06T12:11:59.382Z","created_at":"2021-03-06T12:11:55.057Z","updated_at":"2021-03-06T12:11:59.419Z","imgPromo":null}]
+            source: 'https://event-editor-n3nh3.ondigitalocean.app',
+            events: [{
+                "id": 1,
+                "shortName": "merengue party",
+                "date": "2021-03-03",
+                "time": "19:00:00.000",
+                "address": "вулиця Алматинська, 74, Київ",
+                "description": "Go ahead and enter app3.seen = false in the console. You should see the message disappear.\n\nThis example demonstrates that we can bind data to not only text and attributes, but also the structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.\n\nThere are quite a few other directives, each with its own special functionality. For example, the v-for directive can be used for displaying a list of items using the data from an Array:",
+                "dj": "dj Stribanek",
+                "balance": "3 меренге, 1 сон",
+                "weekDay": "воскресенье",
+                "fee": "500 грн",
+                "published_at": "2021-03-06T12:11:59.382Z",
+                "created_at": "2021-03-06T12:11:55.057Z",
+                "updated_at": "2021-03-06T12:11:59.419Z",
+                "imgPromo": null
+            }]
         },
         methods: {
+            dayOfWeek: function (strdate) {
+                d = new Date(strdate)
+                const days = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота']
+                return days[d.getDay()]
+            },
+            prepareEvents: function (events){
+                for (let i=0; i<events.length;i++){
+                    events[i].day = this.dayOfWeek(events[i].date)
+                }
 
+                return events
+            }
         },
         async beforeMount() {
-            let response = await fetch('https://event-editor-zjwkw.ondigitalocean.app/parties');
+            //this.events = this.prepareEvents(this.events)
+
+            let response = await fetch(this.source+'/parties?_sort=date:asc,rank:asc');
 
             if (response.ok) { // если HTTP-статус в диапазоне 200-299
-                               // получаем тело ответа (см. про этот метод ниже)
+                // получаем тело ответа (см. про этот метод ниже)
                 let events = await response.json();
-                for (i=0; i<events.length; i++){
+                for (i = 0; i < events.length; i++) {
                     if (!events[i].imgPromo) console.log('not exist')
                 }
 
                 console.log(events)
-                this.events = events
+                this.events = this.prepareEvents(events)
             } else {
                 alert("Ошибка HTTP: " + response.status);
             }
